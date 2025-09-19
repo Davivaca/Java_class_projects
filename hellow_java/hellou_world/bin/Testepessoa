@@ -1,0 +1,9 @@
+/*public class Testepessoa{
+
+    public static void main(String[],args) {
+        var male = new pessoa();
+        male.setNamename("João");
+        male.setAge(12);
+        System.out.println("Male name " + male.getName() + " Age " + male.getAge)
+    }
+}
