@@ -38,8 +38,7 @@ public class Manager extends Employe{ // Primeira linha o que faz? Ela pega o c√
 
     public void setComission(double comission) {
         this.comission = comission;
-    }
+    }    
+}
 ```
 
-    
-}
