@@ -119,9 +119,48 @@ public non-sealed class Manager extends Employe{ // CLASSE FILHA PODENDO AGORA H
     public void setComission(double comission) {
         this.comission = comission;
     }
-
-    
 }
-
 ```
+### Herança e Polimorfismo Continuação
+Esse é o código inicial que fiz durante a aula onde agora também tenho outra classe que é o Salesman
+```
+public class App {
+    public static void main(String[] args) throws Exception {
+        printEmploye(new Manager()); // Criando variável filha de Employe
+        printEmploye(new Salesman());
+    }
+    public static void printEmploye(Employe employe) {
 
+        if (employe instanceof Manager){ // INSTANCEOF VERIFICA SE O OBJETO É UMA INSTANCIA DE DETERIMINADA CLASSE
+        employe.setName("João");
+        ((Manager)employe).setLogin("joão");
+        ((Manager)employe).setPassword("123456");
+        
+        System.out.printf("====%s=====\n",employe.getClass().getCanonicalName());
+        System.out.println(employe.getName());
+        System.out.println(((Manager)employe).getLogin()); // ((Manager)employe) Substitui o employe sozinho
+        System.out.println(((Manager)employe).getPassword());
+
+        }
+        System.out.println("=========");
+    }
+}
+```
+Contudo há uma forma de simplificar o código tirando a necessidade de utilizar "((Manager)employe)" toda hora
+```
+    public static void printEmploye(Employe employe) {
+
+        if (employe instanceof Manager manager){ // COLOCANDO O MANAGER NO FINAL TIRA A NECESSIDADE DE UTILIZAR O ((Manager)employe)
+        employe.setName("João");
+        manager.setLogin("joão"); // AGORA POSSO UTILIZAR SÓ O MANAGER
+        ((Manager)employe).setPassword("123456");
+        
+        System.out.printf("====%s=====\n",employe.getClass().getCanonicalName());
+        System.out.println(employe.getName());
+        System.out.println(((Manager)employe).getLogin()); // ((Manager)employe) Substitui o employe sozinho
+        System.out.println(((Manager)employe).getPassword());
+
+        }
+        System.out.println("=========");
+    }
+```
