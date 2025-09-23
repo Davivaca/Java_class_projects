@@ -165,3 +165,10 @@ Contudo há uma forma de simplificar o código tirando a necessidade de utilizar
     }
 ```
 Importante salientar que RECORD não pode herdar nada de classes pois obviamente ele recebe apenas métodos estáticos, os quais não podem ser passados por herança
+
+Utilizando o Instanceof no código
+Exemplo:
+```
+System.out.printl(Salesman instanceof Employe);
+```
+A saída será "True" pois o instanceof está refernciando que o Salesman é apenas uma instania de Employe o que é correto
